@@ -13,3 +13,18 @@ Lurelock is an open-source web extension designed to protect users from phishing
         Fifth: 
     
 </p>
+
+<h1>
+    Languages to use
+</h1>
+
+<p>
+    python
+    javascript
+    
+
+    Addition:
+        html
+        css
+        
+</p>
