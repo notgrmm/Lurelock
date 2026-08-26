@@ -6,10 +6,10 @@ Lurelock is an open-source web extension designed to protect users from phishing
 <p>
     To add:
 
-    <ul>
-        <li>First: Webpage</li>
-        <li>Second: Extension</li>
-        <li>Third: Data model</li>
-        <li>Fourth: </li>
-    </ul>
+        First: Webpage
+        Second: Extension
+        Third: Data model
+        Fourth: Connecting data model to the webpage/extension
+        Fifth: 
+    
 </p>
