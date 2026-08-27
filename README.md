@@ -10,7 +10,7 @@ Lurelock is an open-source web extension designed to protect users from phishing
         Second: Extension
         Third: Data model
         Fourth: Connecting data model to the webpage/extension
-        Fifth: 
+        Fifth: Stress testing 
     
 </p>
 
@@ -30,5 +30,3 @@ Lurelock is an open-source web extension designed to protect users from phishing
         css
         
 </p>
-
-
