@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lurelock — Engine Settings</title>
+  <link rel="stylesheet" href="ext.css">
+</head>
+<body class="options-body">
+
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="10" width="16" height="11" rx="2.5"/>
+      <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+    </symbol>
+    <symbol id="icon-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>
+      <path d="M9 12l2 2 4-4"/>
+    </symbol>
+    <symbol id="icon-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+      <path d="M3 3v5h5"/>
+      <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+      <path d="M16 16h5v5"/>
+    </symbol>
+  </svg>
+
+  <header class="options-header">
+    <div class="options-brand">
+      <div class="brand-icon">
+        <svg class="svg-icon"><use href="#icon-lock"/></svg>
+      </div>
+      <h1 class="options-title">Lurelock Settings</h1>
+    </div>
+    <p class="options-desc">
+      Manage your local machine learning inference engine and model connection.
+    </p>
+  </header>
+
+  <!-- Privacy Guarantee Banner -->
+  <div class="privacy-banner">
+    <svg class="svg-icon"><use href="#icon-shield-check"/></svg>
+    <div>
+      <b>100% On-Device Privacy Guaranteed:</b>
+      All link inspections and URL feature extractions occur locally inside your local machine. No links, domains, or browsing data are sent to external servers or cloud services.
+    </div>
+  </div>
+
+  <main style="margin-top: 20px;">
+    <div class="settings-card">
+
+      <!-- Server API URL -->
+      <div class="form-group">
+        <label class="form-label" for="api">Server Address (Local Engine)</label>
+        <p class="form-help">The local REST API running on your machine via <code>python run_server.py</code>.</p>
+        <div style="display:flex; gap: 8px;">
+          <input
+            type="text"
+            class="text-field"
+            id="api"
+            placeholder="http://127.0.0.1:8787"
+            spellcheck="false"
+          />
+          <button type="button" class="test-btn" id="btn-test-conn">
+            Test Ping
+          </button>
+        </div>
+      </div>
+
+      <!-- Model Source Path -->
+      <div class="form-group">
+        <label class="form-label" for="src">Model Source Path</label>
+        <p class="form-help">
+          Local model file path or Hugging Face repository URL.
+        </p>
+        <input
+          type="text"
+          class="text-field"
+          id="src"
+          placeholder="e.g. models/model.joblib or models/xgboost_model.json"
+          spellcheck="false"
+        />
+        <div class="sample-chips" style="margin-top: 6px;">
+          <span class="chips-label">Presets:</span>
+          <button type="button" class="chip-btn" id="preset-joblib">
+            models/model.joblib
+          </button>
+          <button type="button" class="chip-btn" id="preset-json">
+            models/xgboost_model.json
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Engine Status Card -->
+      <div class="domain-details-card" id="engine-status-card">
+        <div class="detail-row">
+          <span class="detail-label">Engine Status</span>
+          <span class="detail-val" id="val-engine-status">Checking…</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Active Model File</span>
+          <span class="detail-val" id="val-model-file">—</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Inference Latency</span>
+          <span class="detail-val" id="val-latency">—</span>
+        </div>
+      </div>
+
+      <!-- Security Notice -->
+      <div class="security-warning">
+        <b>Security Notice:</b> Python pickle files can execute arbitrary code when loaded. Only load models trained by yourself or downloaded from verified trusted sources.
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="button-bar">
+        <button class="save-btn" id="btn-save">
+          Save &amp; Connect Model
+        </button>
+        <span class="status-message" id="save-status-msg"></span>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="options.js"></script>
+</body>
+</html>

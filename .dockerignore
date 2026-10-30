@@ -1,0 +1,27 @@
+# Virtual environments & sensitive config
+env/
+venv/
+.venv/
+.env*
+*.env
+
+# Cache & bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.cache/
+extension/server/.cache/
+
+# Git & IDE
+.git/
+.gitignore
+.idea/
+.vscode/
+.DS_Store
+
+# Local runtime state & logs
+extension/server/state.json
+state.json
+*.log
+

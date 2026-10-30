@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lurelock — Phishing URL Detector</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r=".6" fill="currentColor"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M12 8v5M12 16.2v.01"/></symbol>
+  <symbol id="i-shield-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v9M12 18.5v.01"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.2a2.8 2.8 0 0 0-.8-2.2c2.700-.3 5.500-1.300 5.500-6a4.600 4.600 0 0 0-1.300-3.200 4.300 4.300 0 0 0-.1-3.200s-1-.3-3.300 1.300a11.400 11.400 0 0 0-6 0C6.700 2.900 5.700 3.200 5.700 3.200a4.300 4.300 0 0 0-.1 3.200A4.600 4.600 0 0 0 4.300 9.600c0 4.600 2.800 5.600 5.500 6a2.800 2.800 0 0 0-.8 2.200V21"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#home" class="brand"><span class="logo"><svg><use href="#i-lock"/></svg></span>Lurelock</a>
+    <nav class="links">
+      <a href="#home" data-route="home">Home</a>
+      <a href="#download" data-route="download">Download</a>
+      <a href="#about" data-route="about">About</a>
+      <a href="#contact" data-route="contact">Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" id="theme" aria-label="Toggle theme"><svg><use href="#i-sun"/></svg></button>
+      <a class="icon-btn" href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HOME -->
+  <section class="view" id="view-home">
+    <div class="center home-hero" id="hero">
+      <h1>Lurelock</h1>
+      <p class="sub" id="home-sub" hidden>A machine-learning scan of the URL structure, naming patterns, and readability.</p>
+      <form class="scan" id="scan-form" autocomplete="off">
+        <svg class="lead"><use href="#i-link"/></svg>
+        <input id="url" type="text" placeholder="Paste a link here" spellcheck="false" aria-label="URL to scan">
+        <button type="submit" class="btn light" id="scan-btn">Scan <svg><use href="#i-arrow"/></svg></button>
+      </form>
+      <div id="result"></div>
+      <p class="hint" id="again" hidden>Want to check another link? Replace the URL above.</p>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="view" id="view-download" hidden>
+    <div class="center">
+      <h1>Download</h1>
+      <p class="sub">Get the Lurelock browser extension to check suspicious links right from your browser.</p>
+      <div class="card ctr">
+        <span class="logo big"><svg><use href="#i-lock"/></svg></span>
+        <h3>Lurelock Extension</h3>
+        <p class="muted">For Chrome and Chromium-based browsers</p>
+        <a class="btn light" href="lurelock-extension.zip" download>Download extension <svg><use href="#i-download"/></svg></a>
+      </div>
+      <p class="hint">Download the package, then follow the included installation guide.<br>Only install extensions from sources you trust.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="view" id="view-about" hidden>
+    <div class="center">
+      <h1>About</h1>
+      <p class="sub">Lurelock is a simple phishing URL detector using machine learning designed to help you pause, check a link, and make a more informed decision.</p>
+      <div class="card list">
+        <div class="row"><svg class="blue"><use href="#i-link"/></svg><div><h4>Check before you click</h4><p>Paste a URL on the Home page to view a clear phishing-risk result.</p></div></div>
+        <div class="row"><svg class="blue"><use href="#i-shield"/></svg><div><h4>Understand the warning</h4><p>Use the result as a prompt to inspect the domain and question unexpected requests.</p></div></div>
+        <div class="row"><svg class="blue"><use href="#i-lock"/></svg><div><h4>Keep your guard up</h4><p>No detector can guarantee a link is safe. Verify the sender and never share sensitive details with an unfamiliar site.</p></div></div>
+      </div>
+      <div class="actions">
+        <a class="btn light" href="#home">Check a link <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn dark" href="#download">Get the extension</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="view" id="view-contact" hidden>
+    <div class="center">
+      <h1>Contact</h1>
+      <p class="sub">Have a question, spotted an issue, or want to share feedback?<br>Send the Lurelock team a message.</p>
+      <form class="card form" id="contact-form">
+        <div class="two">
+          <label>Name<input name="name" placeholder="Your name" required></label>
+          <label>Email<input name="email" type="email" placeholder="you@example.com" required></label>
+        </div>
+        <label>Subject<input name="subject" placeholder="What can we help with?" required></label>
+        <label>Message<textarea name="message" rows="5" placeholder="Tell us a little more…" required></textarea></label>
+        <div class="form-foot"><span class="hint left">Please don’t include passwords or sensitive information.</span><button class="btn light" type="submit">Send message</button></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>© 2025 Lurelock. All rights reserved.</span>
+    <span class="status"><i id="dot"></i><span id="status-text">Checking API…</span></span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
