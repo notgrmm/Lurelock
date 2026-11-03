@@ -1,0 +1,33 @@
+# Known URL shortener services that mask final destination domains
+# One domain per line. Comment lines (#) and blank lines are ignored.
+bit.ly
+tinyurl.com
+t.co
+goo.gl
+ow.ly
+is.gd
+buff.ly
+cutt.ly
+adf.ly
+bit.do
+rb.gy
+shorturl.at
+v.gd
+tiny.cc
+tny.im
+rebrand.ly
+s.id
+clck.ru
+bc.vc
+shorte.st
+bl.ink
+soo.gd
+q.gs
+linktr.ee
+hyperurl.co
+snip.ly
+po.st
+mcaf.ee
+u.to
+zpr.io
+

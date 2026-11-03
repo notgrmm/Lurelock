@@ -1,0 +1,45 @@
+{
+  "model_name": "LureLock Explainable Phishing Detector",
+  "framework": "XGBoost + Scikit-Learn",
+  "trained_at": "2026-11-03T00:35:37.275067+00:00",
+  "feature_count": 18,
+  "features": [
+    "url_length",
+    "domain_length",
+    "path_depth",
+    "dot_count_domain",
+    "hyphen_count_domain",
+    "special_chars_domain",
+    "at_symbol",
+    "digits_domain",
+    "digits_url",
+    "domain_entropy",
+    "is_https",
+    "is_ip_address",
+    "subdomain_count",
+    "keyword_in_domain",
+    "keyword_in_path",
+    "is_shortener",
+    "suspicious_tld",
+    "excessive_length"
+  ],
+  "external_datasets": {
+    "keywords": "datasets/keywords.txt",
+    "shorteners": "datasets/shorteners.txt",
+    "trusted_domains": "datasets/trusted_domains.txt"
+  },
+  "test_metrics": {
+    "accuracy": 0.942,
+    "roc_auc": 0.9804,
+    "phishing_precision": 0.9657,
+    "phishing_recall": 0.9166,
+    "phishing_f1": 0.9405,
+    "test_samples": 29996
+  },
+  "files_kb": {
+    "model.joblib": 146.1,
+    "url_preprocessor.joblib": 0.6,
+    "phishing_xgb_model.joblib": 145.4,
+    "xgboost_model.json": 664.6
+  }
+}
