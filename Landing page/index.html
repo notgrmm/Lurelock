@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Studio · Media Extractor</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/5db04bc99e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Full-page navigation radio controls -->
+    <input type="radio" name="page-nav" id="page-home" class="page-radio" checked />
+    <input type="radio" name="page-nav" id="page-extension" class="page-radio" />
+    <input type="radio" name="page-nav" id="page-about" class="page-radio" />
+    <input type="radio" name="page-nav" id="page-contacts" class="page-radio" />
+
+    <!-- Persistent Header -->
+    <header class="header">
+      <div class="navbar">
+        <nav>
+          <img class="logo" src="scan.png" alt="Nova Studio Logo" />
+          
+          <div class="navlinks">
+            <ul>
+              <li><label for="page-home" class="nav-btn nav-home">Home</label></li>
+              <li><label for="page-extension" class="nav-btn nav-extension">Extension</label></li>
+              <li><label for="page-about" class="nav-btn nav-about">About Us</label></li>
+              <li><label for="page-contacts" class="nav-btn nav-contacts">Contacts</label></li>
+            </ul>
+          </div>
+
+          <div class="other-option">
+            <button class="github" type="button" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </button>
+            <button class="mode" type="button" aria-label="Toggle Theme">
+              <i class="fa-solid fa-sun"></i>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Full-page sliding main viewport -->
+    <main class="main-section">
+      <div class="pages-track">
+
+        <!-- ================= PAGE 1: HOME ================= -->
+        <section class="page-view" id="view-home">
+          <div class="page-content">
+            <span class="badge">Fast &amp; Transparent</span>
+            <h1>Lurelock</h1>
+            <p class="subtitle">
+              A url scanner that is capable of blah blah
+              blah blah blah blah blah blah blah blah blah
+            </p>
+
+            <div class="input-group" id="bar">
+              <div class="loading-bar"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="7"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input id="url-input" type="text" placeholder="Paste a link to scan..." />
+              <button class="scan-btn" type="button">Scan</button>
+            </div>
+
+            <div class="trust-signifier">
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature-card">
+                <i class="fa-solid fa-bolt feature-icon"></i>
+                <h3>Instant Processing</h3>
+                <p>No waiting in queues or 30-second download countdowns.</p>
+              </div>
+              <div class="feature-card">
+                <i class="fa-solid fa-shield-halved feature-icon"></i>
+                <h3>Zero Tracking</h3>
+                <p>We don't log your requests, save URLs, or serve pop-up ads.</p>
+              </div>
+              <div class="feature-card">
+                <i class="fa-solid fa-sliders feature-icon"></i>
+                <h3>Multiple Formats</h3>
+                <p>Extract raw 4K video streams, 320kbps MP3 audio, or subtitles.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ================= PAGE 2: EXTENSION ================= -->
+        <section class="page-view" id="view-extension">
+          <div class="page-content">
+            <span class="badge">Browser Companion</span>
+            <h1>One-Click Media Downloader</h1>
+            <p class="subtitle">
+              Install the Nova Studio browser extension to detect and extract playable media directly from any page without copying and pasting URLs.
+            </p>
+
+            <div class="browser-buttons">
+              <button class="browser-btn" type="button">
+                <i class="fa-brands fa-chrome"></i> Add to Chrome
+              </button>
+              <button class="browser-btn" type="button">
+                <i class="fa-brands fa-firefox-browser"></i> Add to Firefox
+              </button>
+              <button class="browser-btn" type="button">
+                <i class="fa-brands fa-edge"></i> Add to Edge
+              </button>
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature-card">
+                <i class="fa-solid fa-video feature-icon"></i>
+                <h3>In-Player Overlay</h3>
+                <p>Adds a discreet download button directly into HTML5 video players.</p>
+              </div>
+              <div class="feature-card">
+                <i class="fa-solid fa-feather feature-icon"></i>
+                <h3>Ultra Lightweight</h3>
+                <p>Less than 100KB with zero background battery drain or telemetry.</p>
+              </div>
+              <div class="feature-card">
+                <i class="fa-solid fa-list-check feature-icon"></i>
+                <h3>Batch Downloads</h3>
+                <p>Download full playlists or multiple selected formats in one shot.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 3: ABOUT US ================= -->
+        <section class="page-view" id="view-about">
+          <div class="page-content">
+            <span class="badge">Our Mission</span>
+            <h1>Transparent, Lightweight &amp; Free</h1>
+            <p class="subtitle">
+              Most online video downloaders are bloated with aggressive malware ads, redirect tricks, and subscription traps. Nova Studio is built to do the exact opposite.
+            </p>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <h2>0</h2>
+                <p>Ads or Trackers</p>
+              </div>
+              <div class="stat-card">
+                <h2>100%</h2>
+                <p>Open Source Code</p>
+              </div>
+              <div class="stat-card">
+                <h2>&lt; 50ms</h2>
+                <p>Engine Lookup Speed</p>
+              </div>
+              <div class="stat-card">
+                <h2>15+</h2>
+                <p>Supported Platforms</p>
+              </div>
+            </div>
+
+            <div class="about-card">
+              <h3>Community First</h3>
+              <p>
+                Our core parsing library is maintained on GitHub by independent contributors around the world.
+                Anyone can inspect the code, add support for new platforms, or self-host their own instance.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 4: CONTACTS ================= -->
+        <section class="page-view" id="view-contacts">
+          <div class="page-content">
+            <span class="badge">Get in Touch</span>
+            <h1>We'd love to hear your feedback</h1>
+            <p class="subtitle">
+              Have questions, found a broken link format, or want to suggest a new platform? Contact us through any of these channels.
+            </p>
+
+            <div class="feature-grid">
+              <div class="feature-card">
+                <i class="fa-brands fa-github feature-icon"></i>
+                <h3>GitHub Issues</h3>
+                <p>Report bugs, request provider scrapers, or submit pull requests.</p>
+              </div>
+              <div class="feature-card">
+                <i class="fa-brands fa-discord feature-icon"></i>
+                <h3>Community Discord</h3>
+                <p>Chat with developers and get quick troubleshooting assistance.</p>
+              </div>
+              <div class="feature-card">
+                <i class="fa-solid fa-envelope feature-icon"></i>
+                <h3>Direct Email</h3>
+                <p>Reach out directly to our core maintenance team at support@novastudio.dev.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer id="contact">
+      <p>© 2026 Nova Studio. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
