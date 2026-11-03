@@ -49,42 +49,6 @@ Lurelock/
 
 ---
 
-## 🎓 Defense Cheatsheet: How LureLock Classifies a URL
-
-When asked: *"How does your system classify a link as phishing or legitimate?"*, you can explain it in 4 clear, defensible steps:
-
-```
-[ Input URL ]  (from Web UI, Extension, or CLI)
-      │
-      ▼
-1. URL Canonicalization (normalize_url)
-   • Adds standard scheme, cleans host, standardizes path & query
-   • Ensures "google.com", "https://google.com", and "https://google.com/" produce identical vectors
-      │
-      ▼
-2. External Dataset Check (is_trusted_domain)
-   • Resolves registered apex domain (e.g. "google.com" from "https://mail.google.com/...")
-   • Checks against external reference dataset: datasets/trusted_domains.txt
-   • If verified: 0% risk, skips ML to prevent false positives
-      │
-      ▼
-3. Explainable Feature Extraction (18 Numerical Indicators)
-   • Length & Structure: URL length, domain length, path depth, subdomain count
-   • Obfuscation Cues: Dot count, hyphen count (brand spoofing), @ symbol (credential trick), digit counts
-   • Host Identity: Bare IPv4 address check, Shannon entropy (random DGA domain detector)
-   • Content & Masking: Suspicious keywords in domain vs path (from datasets/keywords.txt),
-     URL shortener detection (from datasets/shorteners.txt), high-risk TLDs (.xyz, .top...)
-      │
-      ▼
-4. XGBoost Machine Learning Classifier
-   • Evaluates the 18-dimensional feature vector using trained gradient boosted decision trees
-   • Outputs a calibrated threat probability from 0.0 to 1.0 (Risk Score: 0% to 100%)
-   • Safe (<30% risk)  |  Warning (30% - 59% risk)  |  Phishing (>=60% risk)
-   • Generates an indicator breakdown card explaining exactly WHY the verdict was given
-```
-
----
-
 ## ❓ FAQ: Why did the Extension classify as Phishing while the Website didn't?
 
 ### The Root Cause:
